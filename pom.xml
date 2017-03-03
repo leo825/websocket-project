@@ -156,42 +156,42 @@
 
 
     <build>
-       <finalName>websocket</finalName>
-    <plugins>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>2.0.2</version>
-            <configuration>
-                <source>1.7</source>
-                <target>1.7</target>
-                <encoding>UTF-8</encoding>
-            </configuration>
-        </plugin>
+        <finalName>websocket</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.0.2</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
 
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-war-plugin</artifactId>
-            <version>2.1.1</version>
-            <configuration>
-                <packagingExcludes>WEB-INF/web.xml</packagingExcludes>
-                <failOnMissingWebXml>false</failOnMissingWebXml>
-                <!-- 重点是这个配置 -->
-                <warName>${project.name}</warName>
-            </configuration>
-        </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.1.1</version>
+                <configuration>
+                    <packagingExcludes>WEB-INF/web.xml</packagingExcludes>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                    <!-- 重点是这个配置 -->
+                    <warName>${project.name}</warName>
+                </configuration>
+            </plugin>
 
-        <!-- 跳过测试用例 -->
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>2.16</version>
-            <configuration>
-                <skipTests>true</skipTests>
-                <!--加上这个编码可以解决maven的test工程的时候出现的中文乱码情况-->
-                <argLine>-Dfile.encoding=UTF-8</argLine>
-            </configuration>
-        </plugin>
-    </plugins>
-</build>
+            <!-- 跳过测试用例 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.16</version>
+                <configuration>
+                    <skipTests>true</skipTests>
+                    <!--加上这个编码可以解决maven的test工程的时候出现的中文乱码情况-->
+                    <argLine>-Dfile.encoding=UTF-8</argLine>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
