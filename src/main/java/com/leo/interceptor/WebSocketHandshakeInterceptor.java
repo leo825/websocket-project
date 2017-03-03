@@ -12,13 +12,13 @@ public class WebSocketHandshakeInterceptor extends HttpSessionHandshakeIntercept
 
 	public boolean beforeHandshake(ServerHttpRequest request, ServerHttpResponse response, WebSocketHandler wsHandler,
 			Map<String, Object> attributes) throws Exception {
-		System.out.println("握手之前····");
+		System.out.println("握手之前==========");
 		return super.beforeHandshake(request, response, wsHandler, attributes);
 	}
 
 	public void afterHandshake(ServerHttpRequest request, ServerHttpResponse response, WebSocketHandler wsHandler,
 			Exception exception) {
-		System.out.println("握手之后····");
+		System.out.println("握手之后=========");
 		super.afterHandshake(request, response, wsHandler, exception);
 	}
  

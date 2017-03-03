@@ -25,7 +25,11 @@ public class SystemWebSocketHandler extends TextWebSocketHandler {
 	@Override
 	protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
 		System.out.println("handleTextMessage");
+		System.out.println("=====================message=====================");
+		System.out.println(message.toString());
+		System.out.println("===================message===end==================");
 		session.sendMessage(message);
+
 	}
 
 	/**
@@ -36,8 +40,8 @@ public class SystemWebSocketHandler extends TextWebSocketHandler {
 		System.out.println("connect to the websocket success......");
 		connections.add(session);
 		// 这块会实现自己业务，比如，当用户登录后，会把离线消息推送给用户
-		TextMessage returnMessage = new TextMessage("你好，张三");
-		SystemWebSocketHandler.sendMessageToUsers(returnMessage);
+//		TextMessage returnMessage = new TextMessage("");
+//		SystemWebSocketHandler.sendMessageToUsers(returnMessage);
 	}
 	
 	/**
