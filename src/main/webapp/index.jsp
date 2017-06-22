@@ -20,11 +20,12 @@
 	</textarea>
 
 
-<script type="text/javascript" src="${pageContext.request.contextPath }/js/jquery-1.11.1.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath }/js/websocket_util.js"></script>
+<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="js/websocket_util.js"></script>
 <script type="text/javascript">
 
-    var url = "ws://localhost:8080/${pageContext.request.contextPath}/webSocketServer";
+    var url = "ws://localhost:8080/PushServer/myecho";
+    console.log(url);
     var ws = WebSocketUtil.getWs(url);
     WebSocketUtil.onopen(ws);
     ws.onmessage = function (event) {
